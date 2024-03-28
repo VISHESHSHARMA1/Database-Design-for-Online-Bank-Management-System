@@ -1,0 +1,73 @@
+   +------------------+           +-----------------+           +------------------+
+   |   CUSTOMER       |           |   BANK_INFO     |           |   LOANS          |
+   +------------------+           +-----------------+           +------------------+
+   | CUSTOMER_ID (PK) |           | IFSC_CODE (PK)  |           | LOAN_ID (PK)     |
+   | CUSTOMER_NAME    |           | BANK_NAME       |           | ACCOUNT_NO (FK)  |
+   | DATE_OF_BIRTH    |           | BRANCH_NAME     |           | LOAN_TYPE        |
+   | GUARDIAN_NAME    |           |                 |           | AMOUNT           |
+   | ADDRESS          |           |                 |           | INTEREST_RATE    |
+   | CONTACT_NO       |           |                 |           | START_DATE       |
+   | MAIL_ID          |           |                 |           | END_DATE         |
+   | GENDER           |           |                 |           +------------------+
+   | MARITIAL_STATUS  |           +-----------------+
+   | IDENTIFICATION_  |
+   | DOC_TYPE         |
+   | ID_DOC_NO        |
+   | CITIZENSHIP      |
+   +------------------+
+
+
+    +-----------------------+           +-------------------+
+    |   CUSTOMER_REFERENCE |           |   ACCOUNT_INFO    |
+    +-----------------------+           +-------------------+
+    | CUSTOMER_ID (PK, FK) |           | ACCOUNT_NO (PK)   |
+    | REFERENCE_ACC_NAME   |           | CUSTOMER_ID (FK)  |
+    | REFERENCE_ACC_NO     |           | ACCOUNT_TYPE      |
+    | REFERENCE_ACC_ADDRESS|           | REGISTRATION_DATE |
+    | RELATION             |           | ACTIVATION_DATE   |
+    +-----------------------+           | IFSC_CODE (FK)    |
+                                         | INTEREST          |
+                                         | INITIAL_DEPOSIT   |
+                                         +-------------------+
+
+
+   +------------------+           +---------------+
+   |   TRANSACTIONS   |           | LOGIN_CRED    |
+   +------------------+           +---------------+
+   | TRANSACTION_ID   |           | USERNAME (PK) |
+   | ACCOUNT_NO (FK)  |           | PASSWORD      |
+   | TRANSACTION_DATE |           | ACCOUNT_NO(FK)|
+   | TRANSACTION_TYPE |           +---------------+
+   | AMOUNT           |
+   | DESCRIPTION      |
+   +------------------+
+
+    +------------------+           +---------------+
+    |   PAYMENTS       |           | SESSIONS      |
+    +------------------+           +---------------+
+    | PAYMENT_ID (PK)  |           | SESSION_ID (PK) |
+    | LOAN_ID (FK)     |           | USERNAME (FK)   |
+    | PAYMENT_DATE     |           | TOKEN           |
+    | AMOUNT           |           | EXPIRY_DATETIME |
+    +------------------+           +---------------+
+
+    +------------------+           +-------------------+
+    |   BILL_PAYMENTS  |           | BENEFICIARIES     |
+    +------------------+           +-------------------+
+    | BILL_PAYMENT_ID  |           | BENEFICIARY_ID (PK)|
+    | ACCOUNT_NO (FK)  |           | ACCOUNT_NO (FK)    |
+    | BILLER_NAME      |           | BENEFICIARY_NAME   |
+    | AMOUNT           |           | BENEFICIARY_ACC_NO |
+    | PAYMENT_DATE     |           +-------------------+
+    +------------------+
+
+
+    +------------------+           +-------------------+
+    |   MESSAGES       |           |                   |
+    +------------------+           +-------------------+
+    | MESSAGE_ID (PK)  |           |                   |
+    | SENDER_ID (FK)   |           |                   |
+    | RECEIVER_ID (FK) |           |                   |
+    | MESSAGE_TEXT     |           |                   |
+    | SEND_DATE        |           |                   |
+    +------------------+           +-------------------+
